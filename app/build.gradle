@@ -1,10 +1,17 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-kapt'
+
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+
+    buildFeatures{
+        dataBinding = true
+    }
 
     defaultConfig {
         applicationId "com.uos.project_windy_job"
@@ -12,6 +19,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -33,5 +41,77 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'com.google.android.play:core:1.9.0'
+    // For Kotlin users also import the Kotlin extensions library for Play Core:
+    implementation 'com.google.android.play:core-ktx:1.8.1'
+
+    //circleimageview
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    //firebaseMessage
+    implementation 'com.google.firebase:firebase-messaging:20.2.4'
+
+    //firebaseStore
+    implementation 'com.google.firebase:firebase-firestore:21.4.0'
+
+    //firebaseStorage
+    implementation 'com.google.firebase:firebase-storage-ktx:19.1.1'
+
+    //firebaseRemoteConfig
+    implementation 'com.google.firebase:firebase-config:19.1.4'
+
+    //facebookSDK
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+
+    //firebaseCrashTics
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:17.2.1'
+    //firebaseAnalytics
+    implementation 'com.google.firebase:firebase-analytics:17.5.0'
+
+    //Google Play service
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
+
+    //firebaseCore
+    implementation 'com.google.firebase:firebase-core:17.0.0'
+
+    //firebaseAuth
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+
+    //viewpager2
+    implementation 'com.google.firebase:firebase-database:19.3.1'
+
+    //viewpager2
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    //glide
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+
+
+
+    //okhttp
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+
+
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+
+    //material 1.3.0-alpha02 버전
+    implementation 'com.google.android.material:material:1.3.0-alpha02'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.google.firebase:firebase-dynamic-links:19.1.0'
+
+    //dataBinding
+    kapt 'com.android.databinding:compiler:3.5.0'
 
 }
